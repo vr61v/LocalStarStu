@@ -1,4 +1,269 @@
-@import url("/css/ResetCss.scss");
+/* 
+Tripoli Reset
+http://devkick.com/lab/tripoli/
+*/
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-size: 1em;
+  outline: none;
+}
+
+code, kbd, samp, pre, tt, var, textarea, input, select, isindex, listing, xmp, plaintext {
+  font: inherit;
+  font-size: 1em;
+  white-space: normal;
+}
+
+dfn, i, cite, var, address, em {
+  font-style: normal;
+}
+
+th, b, strong, h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+a, img, a img, iframe, form, fieldset, abbr, acronym, object, applet, table {
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td, center {
+  text-align: left;
+  vertical-align: top;
+}
+
+body {
+  line-height: 1;
+  background: white;
+  color: black;
+}
+
+q {
+  quotes: "" "";
+}
+
+ul, ol, dir, menu {
+  list-style: none;
+}
+
+sub, sup {
+  vertical-align: baseline;
+}
+
+a {
+  color: inherit;
+}
+
+hr {
+  display: none;
+} /* we don't need a visual hr in layout */
+/* disables some nasty font attributes in standard browsers */
+font {
+  color: inherit !important;
+  font: inherit !important;
+  color: inherit !important;
+}
+
+marquee {
+  overflow: inherit !important;
+  -moz-binding: none;
+}
+
+blink {
+  text-decoration: none;
+}
+
+nobr {
+  white-space: normal;
+}
+
+.about__title-main {
+  font-size: 124px;
+  font-family: Helvetica;
+  font-weight: 700;
+  color: #f2f2f2;
+}
+
+.about__title-description {
+  font-size: 64px;
+  font-family: Helvetica;
+  font-weight: 700;
+  color: #f2f2f2;
+}
+
+.about__text-description, .about__text-main {
+  font-size: 32px;
+  font-family: Helvetica;
+  font-weight: 200;
+  color: #f2f2f2;
+}
+
+.header {
+  font-size: 16px;
+  font-family: Helvetica;
+  font-weight: 700;
+  color: #f2f2f2;
+}
+
+.about__title-main {
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.65);
+}
+
+.about__text-description, .about__title-description, .about__text-main {
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.65);
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.__container {
+  max-width: 1200px;
+  padding: 0 36px;
+  margin: 0 auto;
+  box-sizing: content-box;
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(38, 38, 38, 0.1);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  z-index: 10;
+}
+.header__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 60px;
+}
+.header__logoImg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (max-width: 1400px) {
+  .header__container {
+    min-height: 60px;
+  }
+  .header__logoImg {
+    height: 40px;
+  }
+}
+@media (max-width: 1000px) {
+  .header__container {
+    min-height: 50px;
+  }
+  .header__logoImg {
+    height: 30px;
+  }
+}
+@media (max-width: 600px) {
+  .header__container {
+    min-height: 40px;
+  }
+  .header__logoImg {
+    height: 20px;
+  }
+}
+.about {
+  position: relative;
+  min-height: 100vh;
+  background-image: url(/source/about__bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+}
+.about__container-main {
+  position: relative;
+  text-align: center;
+}
+.about__main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+.about__title-main {
+  grid-column: 2;
+}
+.about__container-description {
+  padding-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "__title __imgBig" "__text __imgBig" "__imgSmall __imgBig";
+  gap: 10px;
+  justify-self: center;
+  grid-auto-flow: dense;
+}
+.about__title-description {
+  grid-area: __title;
+}
+.about__text-description {
+  grid-area: __text;
+}
+.about__imgBig {
+  grid-area: __imgBig;
+}
+.about__imgSmall {
+  grid-area: __imgSmall;
+}
+.about__image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 40px;
+}
+
+@media (max-width: 1400px) {
+  .about__title-main {
+    font-size: 108px;
+  }
+  .about__text-main {
+    font-size: 24px;
+  }
+}
+@media (max-width: 1000px) {
+  .about__title-main {
+    font-size: 76px;
+  }
+  .about__title-description {
+    font-size: 42px;
+  }
+  .about__text-description {
+    font-size: 24px;
+  }
+}
+@media (max-width: 850px) {
+  .about__container-description {
+    padding-top: 50px;
+    grid-template-areas: "__title __title" "__text __imgBig" "__imgSmall __imgSmall";
+  }
+  .about__image {
+    border-radius: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .about__title-main {
+    font-size: 64px;
+  }
+  .about__title-description {
+    font-size: 32px;
+  }
+  .about__text-description {
+    font-size: 16px;
+  }
 }

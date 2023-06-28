@@ -1,12 +1,157 @@
-@import url('/css/ResetCss.scss');
+@import "importCss/ResetCss.scss", "importCss/FontsCss.scss";
+$breakpoint1400: 1400px;
+$breakpoint1000: 1000px;
+$breakpoint850: 850px;
+$breakpoint600: 600px;
+body { font-family: Arial, Helvetica, sans-serif; }
 
-//Colors for site
-$White : #f2f2f2;
-$GrayLight : #A6A6A6;
-$Gray : #595959;
-$GrayDark : #262626;
-$Black : #0d0d0d;
-
-body{
-  font-family: Arial, Helvetica, sans-serif;
+.__container {
+  max-width: 1200px;
+  padding: 0 36px;
+  margin: 0 auto;
+  box-sizing: content-box;
 }
+
+.header {
+  @extend %font16px;
+
+  position: absolute;
+  width: 100%; left: 0; top: 0;
+  background-color: rgba($color: $GrayDark, $alpha: 0.1);
+  backdrop-filter: blur(5px);
+  z-index: 10;
+
+  &__container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 60px;
+  }
+  &__logoImg{
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover;
+  }
+}
+@media (max-width: $breakpoint1400) {
+  .header {
+    &__container{ min-height: 60px; }
+    &__logoImg{ height: 40px; }
+  }
+}
+@media (max-width: $breakpoint1000) {
+  .header {
+    &__container{ min-height: 50px; }
+    &__logoImg{ height: 30px; }
+  }
+}
+@media (max-width: $breakpoint600) {
+  .header {
+    &__container{ min-height: 40px; }
+    &__logoImg{ height: 20px; }
+  }
+}
+
+
+.main {
+}
+
+.about {
+  position: relative;
+  min-height: 100vh;
+  background-image: url(/source/about__bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+
+
+  //about__main
+  &__container-main {
+    position: relative;
+    text-align: center;
+  }
+  &__main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+  }
+  &__title-main { 
+    @extend %font124px;
+    @extend %fontShadowTitle;
+    grid-column: 2;
+  }
+  &__text-main {
+    @extend %font32px;
+    @extend %fontShadow;
+  }
+
+  //about__description
+  &__container-description {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "__title __imgBig" 
+    "__text __imgBig"
+    "__imgSmall __imgBig";
+
+    gap: 10px;
+    justify-self: center;
+    grid-auto-flow: dense
+  }
+
+  &__title-description {
+    @extend %font64px;
+    @extend %fontShadow;
+    grid-area: __title;
+  }
+  &__text-description {
+    @extend %font32px;
+    @extend %fontShadow;
+    grid-area: __text;
+  }
+  &__imgBig { grid-area: __imgBig;}
+  &__imgSmall { grid-area: __imgSmall;}
+  &__image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+  }
+}
+
+@media (max-width: $breakpoint1400) {
+  .about {
+    &__title-main { font-size: 108px; }
+    &__text-main { font-size: 24px; }
+  }
+}
+@media (max-width: $breakpoint1000) {
+  .about {
+    &__title-main { font-size: 76px; }
+    &__title-description { font-size: 42px; }
+    &__text-description { font-size: 24px; }
+  }
+}
+@media (max-width: $breakpoint850) {
+  .about {
+    &__container-description { 
+      padding-top: 50px;
+      grid-template-areas: 
+      "__title __title" 
+      "__text __imgBig"
+      "__imgSmall __imgSmall";
+    }
+    &__image { border-radius: 20px; }
+  }
+}
+@media (max-width: $breakpoint600) {
+  .about {
+    &__title-main { font-size: 64px; }
+    &__title-description { font-size: 32px; }
+    &__text-description { font-size: 16px; }
+  }
+}
+
