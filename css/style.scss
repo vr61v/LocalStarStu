@@ -56,6 +56,7 @@ body { font-family: Arial, Helvetica, sans-serif; }
 .main {
 }
 
+
 .about {
   position: relative;
   min-height: 100vh;
@@ -64,7 +65,7 @@ body { font-family: Arial, Helvetica, sans-serif; }
   background-size: cover;
   background-position: bottom center;
 
-
+  padding-bottom: 100px;
   //about__main
   &__container-main {
     position: relative;
@@ -137,6 +138,7 @@ body { font-family: Arial, Helvetica, sans-serif; }
 }
 @media (max-width: $breakpoint850) {
   .about {
+    padding-bottom: 50px;
     &__container-description { 
       padding-top: 50px;
       grid-template-areas: 
@@ -155,3 +157,107 @@ body { font-family: Arial, Helvetica, sans-serif; }
   }
 }
 
+
+.instruments {
+  position: relative;
+  background-image: url(/source/instruments__bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  padding-bottom: 100px;
+
+  &__title {
+    @extend %font64px;
+    @extend %fontShadow;
+    padding-top: 100px;
+  }
+  &__content{
+    margin: 100px 50px 50px;
+    overflow: hidden;
+  }
+}
+
+.slider {
+  display: flex;
+  flex-direction: row;
+}
+.card {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 50px;
+    background: rgba(166, 166, 166, 0.10);
+    backdrop-filter: blur(0px);
+  }
+  &__image {
+    img {
+      max-width: 290px;
+      object-fit: cover;
+    }
+  }
+  &__title {
+    @extend %font32px;
+    @extend %fontShadow;
+    text-align: center;
+    font-size: 24px;
+    padding: 10px 20px 30px 20px;
+    max-width: 270px;
+  }
+}
+.swiper-button-next:after,.swiper-button-prev:after {
+  font-size: 0px;
+}
+.swiper-pagination-bullet {
+  width: var(--swiper-pagination-bullet-width,var(--swiper-pagination-bullet-size,10px));
+  height: var(--swiper-pagination-bullet-height,var(--swiper-pagination-bullet-size,10px));
+  background: $White;
+  opacity: var(--swiper-pagination-bullet-inactive-opacity, .9);
+}
+
+@media (max-width: $breakpoint1400) {
+  .instruments {
+    &__title {
+      @extend %font64px;
+      padding-top: 100px;
+    }
+    &__content{
+      margin: 100px 15px 50px;
+      overflow: hidden;
+    }
+  }
+
+}
+@media (max-width: $breakpoint1000) {
+  .instruments {
+    &__title {
+      font-size: 42px;
+    }
+    &__content{
+      margin: 100px 5px 50px;
+      overflow: hidden;
+    }
+  }
+  .card {
+    &__title {
+      padding: 10px 20px 30px;
+      font-size: 18px;
+    }
+  }
+}
+@media (max-width: $breakpoint850) {
+  .instruments {
+    padding-bottom: 50px;
+  }
+  .swiper-button-next,.swiper-button-prev {
+    display: none;
+    font-size: 0px;
+  }
+}
+@media (max-width: $breakpoint600) {
+  .instruments {
+    &__title {
+      font-size: 32px;
+    }
+  }
+}

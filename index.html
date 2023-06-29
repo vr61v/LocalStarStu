@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="/css/style.css">
+
   <title>Local Star stu.</title>
 </head>
 <body>
@@ -32,11 +34,117 @@
           <div class="about__imgSmall"><img src="source/about__imgSmall.png" alt="" class="about__image"></div>
         </div>
       </section>
+
+      <section class="instruments">
+        <div class="instruments__title __container">СТУДИЙНОЕ ОБОРУДОВАНИЕ</div>
+
+        <div class="instruments__slider __container swiper">
+          <div class="instruments__content ">
+            <div class="slider swiper-wrapper">
+
+              <div class="card swiper-slide">
+                <div class="card__container">
+                  <div class="card__image"> <img src="/source/slider/iMac 27', Retina 5K.png" alt="iMac 27', Retina 5K, (3.4Ghz Intel Core i5, 40GB RAM)"> </div>
+                  <div class="card__title">iMac 27', Retina 5K, (3.4Ghz Intel Core i5, 40GB RAM)</div>
+                </div>
+              </div>
+
+              <div class="card swiper-slide">
+                <div class="card__container">
+                  <div class="card__image"> <img src="/source/slider/Universal Audio Apollo Twin X QUAD.png" alt="Universal Audio Apollo Twin X QUAD"> </div>
+                  <div class="card__title">Universal Audio Apollo Twin X QUAD</div>
+                </div>
+              </div>
+
+              <div class="card swiper-slide">
+                <div class="card__container">
+                  <div class="card__image"> <img src="/source/slider/Neumann TLM 103.png" alt="Neumann TLM 103"> </div>
+                  <div class="card__title">Neumann TLM 103</div>
+                </div>
+              </div>
+
+              <div class="card swiper-slide">
+                <div class="card__container">
+                  <div class="card__image"> <img src="/source/slider/Adam t5v.png" alt="Adam t5v"> </div>
+                  <div class="card__title">Adam t5v</div>
+                </div>
+              </div>
+
+              <div class="card swiper-slide">
+                <div class="card__container">
+                  <div class="card__image"> <img src="/source/slider/Genelec 8010.png" alt="Genelec 8010"> </div>
+                  <div class="card__title">Genelec 8010</div>
+                </div>
+              </div>
+
+              <div class="card swiper-slide">
+                <div class="card__container">
+                  <div class="card__image"> <img src="/source/slider/Behringer HA400.png" alt="Behringer HA400"> </div>
+                  <div class="card__title">Behringer HA400</div>
+                </div>
+              </div>
+
+              <div class="card swiper-slide">
+                <div class="card__container">
+                  <div class="card__image"> <img src="/source/slider/Beyerdynamic DT 770 Pro.png" alt="Beyerdynamic DT 770 Pro"> </div>
+                  <div class="card__title">Beyerdynamic DT 770 Pro</div>
+                </div>
+              </div>
+
+              <div class="card swiper-slide">
+                <div class="card__container">
+                  <div class="card__image"> <img src="/source/slider/Beyerdynamic DT 990 Pro.png" alt="Beyerdynamic DT 990 Pro"> </div>
+                  <div class="card__title">Beyerdynamic DT 990 Pro</div>
+                </div>
+              </div>
+
+              <div class="card swiper-slide">
+                <div class="card__container">
+                  <div class="card__image"> <img src="/source/slider/Novation Launchpad S.png" alt="Novation Launchpad S"> </div>
+                  <div class="card__title">Novation Launchpad S</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next"> <img src="/source/slider/arrow right.svg" alt=""></div>
+            <div class="swiper-button-prev"><img src="/source/slider/arrow left.svg" alt=""></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
     </main>
 
 
-
     <footer class="footer"></footer>
-  </div>  
+  </div>
+
+  <!-- Swiper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".instruments__content", {
+      slidesPerView: 3,
+      spaceBetween: 10,
+      centeredSlides: true,
+      grabCursor: true,
+      keyboard: true,
+      fade: true,
+
+      pagination: { 
+        el: ".swiper-pagination", 
+        dynamicBullets: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+      breakpoints: {
+        0:{slidesPerView: 1,},
+        600:{slidesPerView: 2,},
+        1000:{slidesPerView: 3,},
+      },
+    });
+  </script>
 </body>
+
+
 </html>
