@@ -281,6 +281,8 @@ body { font-family: Arial, Helvetica, sans-serif; }
   }
   &__buttons {
     padding-top: 100px;
+    display: flex;
+    align-items: center;
   }
   &__buttons-calc, &__buttons-rules, &__buttons-call {
     @extend %font32px;
@@ -291,6 +293,7 @@ body { font-family: Arial, Helvetica, sans-serif; }
     height: 70px;
     border: none;
     margin-bottom: 40px;
+    margin-right: 10px;
     border-radius: 30px;
 
     background: rgba($color: $GrayDark, $alpha: 0.1);
@@ -304,6 +307,9 @@ body { font-family: Arial, Helvetica, sans-serif; }
   }
   &__buttons-call {
     width: 165px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__buttons-calc:hover, &__buttons-rules:hover, &__buttons-call:hover{
@@ -354,18 +360,28 @@ body { font-family: Arial, Helvetica, sans-serif; }
   }
 }
 
-
 .modal-calc {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+
   position: fixed;
   z-index: 1;
-  padding-top: 100px;
+  padding-top: 5%;
+  padding-bottom: 100px;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%; 
-  overflow: auto;
-  backdrop-filter: blur(5px);
+  
+  backdrop-filter: blur(15px);
+  transition: all 0.3s;
+  &__open{
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.3s;
+  }
   &__form{
     display: flex;
     flex-direction: row;
@@ -412,7 +428,7 @@ body { font-family: Arial, Helvetica, sans-serif; }
     color: $Black;
   }
   &__name{
-    width: 200px;
+    width: 100%;
     height: 20px;
     padding: 10px 10px;
     border: none;
@@ -452,6 +468,9 @@ body { font-family: Arial, Helvetica, sans-serif; }
   li{
     margin-bottom: 20px;
   }
+  li:last-child{
+    margin-bottom: 0px;
+  }
   &__checkbox + label {
     display: inline-flex;
     align-items: center;
@@ -478,7 +497,7 @@ body { font-family: Arial, Helvetica, sans-serif; }
     background-image: url('/source/icon-ok.png');
     background-repeat: no-repeat;
     background-size: 20px 20px;
-    background-position: bottom center;
+    background-position: center;
 
     transition: all 0.2s;
   }
@@ -491,6 +510,59 @@ body { font-family: Arial, Helvetica, sans-serif; }
   }
 }
 
+.modal-rules {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  margin: auto;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; 
+  
+  backdrop-filter: blur(15px);
+  transition: all 0.3s;
+  &__open{
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.3s;
+  }
+  &__content{
+    margin: auto;
+    padding: 100px;
+    border-radius: 30px;
+    background-color: rgba($color: $Black, $alpha: 0.2);
+  }
+  &__title{
+    @extend %font32px;
+    @extend %fontShadow;
+    padding-bottom: 50px;
+  }
+  li{
+    @extend %font32px;
+    @extend %fontShadow;
+    font-size: 24px;
+    padding-bottom: 50px;
+  }li:last-child{padding-bottom: 0;}
+  &__close {
+    color: $White;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: all 0.3s;
+  }
+  &__close:hover, &__close:focus {
+    color: $GrayDark;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+}
 
 @media (max-width: $breakpoint1400) {
   .prices {
@@ -515,6 +587,35 @@ body { font-family: Arial, Helvetica, sans-serif; }
       height: 300px;
     }
   }  
+  .modal-calc{
+    &__title{
+      padding-bottom: 0px;
+    }
+    &__content{
+      margin: auto 15px;
+    }
+    &__form {
+      display: flex;
+      flex-direction: column;
+    }
+    ul{
+      padding-top: 50px;
+    }
+  }
+  .modal-rules{
+    &__title{
+      padding-bottom: 10px;
+    }
+    &__content{
+      margin: auto 15px;
+    }
+    li{
+      padding-bottom: 20px;
+    }
+    &__content{
+      margin: auto 15px;
+    }
+  }
 }
 @media (max-width: $breakpoint1000) {
   .prices {
@@ -541,8 +642,6 @@ body { font-family: Arial, Helvetica, sans-serif; }
     }
     &__buttons{
       padding-top: 50px;
-      display: flex;
-      align-items: center;
     }
     &__buttons-calc, &__buttons-rules, &__buttons-call {
       font-size: 18px;
@@ -569,11 +668,62 @@ body { font-family: Arial, Helvetica, sans-serif; }
       font-size: 24px;
     }
   } 
+
+  .modal-calc{
+    &__title{
+      font-size: 24px;
+    }
+    &__label {
+      font-size: 18px;
+    }
+    &__content{
+      padding: 50px 25px;
+    }
+    &__hours {
+      height: 10px;
+      margin-top: 10px;
+    }
+    ul{
+      padding-top: 25px;
+    }
+    &__checkbox + label::before {
+      width: 15px;
+      height: 15px;
+  
+      transition: all 0.2s;
+    }
+    &__checkbox:checked+label::before {
+      background-size: 10px 10px;
+    }
+    &__submit {
+      font-size: 18px;
+      width: 150px;
+      height: 50px;
+    }
+  }
+  .modal-rules{
+    &__title{
+      font-size: 24px;
+    }
+    li {
+      font-size: 18px;
+    }
+    &__content{
+      padding: 50px 25px;
+    }
+  }
+
 }
 @media (max-width: $breakpoint600) {
   .prices {
     &__title {
       font-size: 32px;
+    }
+    &__buttons-calc, &__buttons-rules, &__buttons-call {
+      font-size: 12px;
+      height: 50px;
+      border: none;
+      border-radius: 20px;
     }
   }
 
@@ -591,4 +741,34 @@ body { font-family: Arial, Helvetica, sans-serif; }
       font-size: 16px;
     }
   } 
+
+  .modal-calc{
+    &__label {
+      font-size: 16px;
+    }
+    &__content{
+      padding: 50px 15px;
+    }
+    &__hours {
+      height: 10px;
+      margin-top: 10px;
+    }
+    ul{
+      padding-top: 25px;
+    }
+    &__checkbox + label::before {
+      width: 15px;
+      height: 15px;
+  
+      transition: all 0.2s;
+    }
+    &__checkbox:checked+label::before {
+      background-size: 10px 10px;
+    }
+    &__submit {
+      font-size: 18px;
+      width: 150px;
+      height: 50px;
+    }
+  }
 }

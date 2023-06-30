@@ -168,14 +168,14 @@
         <div class="prices__buttons __container">
           <button class="prices__buttons-calc" id="button-calc">Калькулятор стоимости</button>
           <br>
-          <button class="prices__buttons-rules prices__button">RULES</button>
-          <button href="tel:+79313148151" class="prices__buttons-call prices__button">CALL</button>
+          <button class="prices__buttons-rules" id="button-rules">RULES</button>
+          <a href="tel:+79313148151" class="prices__buttons-call">CALL</a>
         </div>
 
 
         <div id="calc" class="modal-calc">
           <div class="modal-calc__content __container">
-            <span class="modal-calc__close close">&times;</span>
+            <span class="modal-calc__close">&times;</span>
             <div class="modal-calc__title">Рассчитать цену</div>
             <form class="modal-calc__form" action="">
               <ul>
@@ -214,8 +214,8 @@
               </ul>
               <ul>
                 <li>
-                  <label class="modal-calc__label" for="surname">Итого:</label>
-                  <input class="modal-calc__name" disabled="true" type="text" id="surname" name="surname" value="12312">
+                  <label class="modal-calc__label" for="surname" value="Итого">Итого:</label>
+                  <input class="modal-calc__name" type="number" disabled="true" id="result" name="result" value="0"></input>
                 </li>
                 <li>
                   <label class="modal-calc__label" for="surname">Фамилия:</label>
@@ -226,8 +226,8 @@
                   <input class="modal-calc__name" type="text" id="name" name="name">
                 </li>
                 <li>
-                  <label class="modal-calc__label" for="name">Почта:</label>
-                  <input class="modal-calc__name" type="email" id="name" name="name">
+                  <label class="modal-calc__label" for="mail">Почта:</label>
+                  <input class="modal-calc__name" type="email" id="mail" name="mail">
                 </li>
                 <li>
                   <input class="modal-calc__submit" type="submit" value="Отправить">
@@ -235,6 +235,20 @@
               </ul>
             </form>
 
+          </div>
+        </div>
+
+        <div id="rules" class="modal-rules">
+          <div class="modal-rules__content __container">
+            <span class="modal-rules__close close">&times;</span>
+            <div class="modal-rules__title">Rules</div>
+            <ul>
+              <li>1.Запись по номеру телефона 8-931-314-81-51 или в сообщениях группы. Запись считается действительной при внесении предоплаты в размере 50% от забронированного кол-ва часов работы на студии (не менее чем за 24 часа)</li>
+              <li>2. По возможности лучше не приглашать людей не имеющих отношение к записи, производительность и коэффициент полезного действия звукоинженера будет значительно выше. Да и в целом студия не резиновая</li>
+              <li>3. Приезжайте подготовленными. Если материал заранее проработан, часы записи проходят с большей пользой.</li>
+              <li>4. В студии ведётся круглосуточное видеонаблюдение.</li>
+              <li>5. И основное правило - чувствуйте себя как дома, но не забывайте что Вы в гостях. Еда и напитки не должны быть на рабочем месте.Чистота и порядок - залог хорошего настроения и продуктивной работы.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -250,6 +264,7 @@
   <script src="/js/swiper.js"></script>
   <script src="/js/VanillaTilt.js"></script>
   <script src="/js/modal-window.js"></script>
+  <script src="/js/calc.js"></script>
 </body>
 
 
