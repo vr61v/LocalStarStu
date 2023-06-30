@@ -111,6 +111,133 @@
           </div>
         </div>
       </section>
+
+
+      <section class="prices">
+        <div class="prices__title __container">ЦЕНЫ</div>
+
+        <div class="prices__list __container">
+          <div class="list-content">
+            <div class="list-content__item">
+              <div class="list-content__item-price">600 ₽/hour</div>
+              <div class="list-content__item-description">Час аренды студии</div>
+            </div>
+
+            <div class="list-content__item">
+              <div class="list-content__item-price">800 ₽/hour</div>
+              <div class="list-content__item-description">Час аренды студии с Профи</div>
+            </div>
+
+            <div class="list-content__item">
+              <div class="list-content__item-price">from 5.000 ₽</div>
+              <div class="list-content__item-description">Ночь на студии</div>
+            </div>
+
+            <div class="list-content__item">
+              <div class="list-content__item-price">from 3.000 ₽</div>
+              <div class="list-content__item-description">Сведение</div>
+            </div>
+
+            <div class="list-content__item">
+              <div class="list-content__item-price">2.700 ₽</div>
+              <div class="list-content__item-description">Графический дизайн</div>
+            </div>
+
+            <div class="list-content__item">
+              <div class="list-content__item-price">1.000 ₽</div>
+              <div class="list-content__item-description">Технический монтаж / мастеринг</div>
+            </div>
+
+            <div class="list-content__item">
+              <div class="list-content__item-price">5.000 ₽</div>
+              <div class="list-content__item-description">Гострайт / Написание текста</div>
+            </div>
+
+            <div class="list-content__item">
+              <div class="list-content__item-price">from 3.500 ₽</div>
+              <div class="list-content__item-description">Инструментал / Создание аранжировок</div>
+            </div>
+
+            <div class="list-content__item">
+              <div class="list-content__item-price">from 12.000 ₽</div>
+              <div class="list-content__item-description">Песня под ключ</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prices__buttons __container">
+          <button class="prices__buttons-calc" id="button-calc">Калькулятор стоимости</button>
+          <br>
+          <button class="prices__buttons-rules prices__button">RULES</button>
+          <button href="tel:+79313148151" class="prices__buttons-call prices__button">CALL</button>
+        </div>
+
+
+        <div id="calc" class="modal-calc">
+          <div class="modal-calc__content __container">
+            <span class="modal-calc__close close">&times;</span>
+            <div class="modal-calc__title">Рассчитать цену</div>
+            <form class="modal-calc__form" action="">
+              <ul>
+                <li>
+                  <label class="modal-calc__label" for="hours">Часы работы студии: </label>
+                  <input class="modal-calc__hours" type="number" min="0" step="1" id="hours"/>
+                </li>
+                <li>
+                  <input class="modal-calc__checkbox" type="checkbox" id="pro" name="pro" value="pro">
+                  <label class="modal-calc__label" for="pro">Аренда студии с Профи</label>
+                </li>
+                <li>
+                  <input class="modal-calc__checkbox" type="checkbox" id="mixing" name="mixing" value="mixing">
+                  <label class="modal-calc__label" for="mixing">Сведение</label>
+                </li>
+                <li>              
+                  <input class="modal-calc__checkbox" type="checkbox" id="design" name="design" value="design">
+                  <label class="modal-calc__label" for="design">Графический дизайн</label>
+                </li>
+                <li>
+                  <input class="modal-calc__checkbox" type="checkbox" id="mastering" name="mastering" value="mastering">
+                  <label class="modal-calc__label" for="mastering">Технический монтаж / мастеринг</label>    
+                </li>
+                <li>
+                  <input class="modal-calc__checkbox" type="checkbox" id="ghostwriter" name="ghostwriter" value="ghostwriter">
+                  <label class="modal-calc__label" for="ghostwriter">Гострайт / Написание текста</label>    
+                </li>
+                <li>
+                  <input class="modal-calc__checkbox" type="checkbox" id="instrumental" name="instrumental" value="instrumental">
+                  <label class="modal-calc__label" for="instrumental">Инструментал / Создание аранжировок</label>    
+                </li>
+                <li>
+                  <input class="modal-calc__checkbox" type="checkbox" id="songforkey" name="songforkey" value="songforkey">
+                  <label class="modal-calc__label" for="songforkey">Песня под ключ</label>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <label class="modal-calc__label" for="surname">Итого:</label>
+                  <input class="modal-calc__name" disabled="true" type="text" id="surname" name="surname" value="12312">
+                </li>
+                <li>
+                  <label class="modal-calc__label" for="surname">Фамилия:</label>
+                  <input class="modal-calc__name" type="text" id="surname" name="surname">
+                </li>
+                <li>
+                  <label class="modal-calc__label" for="name">Имя:</label>
+                  <input class="modal-calc__name" type="text" id="name" name="name">
+                </li>
+                <li>
+                  <label class="modal-calc__label" for="name">Почта:</label>
+                  <input class="modal-calc__name" type="email" id="name" name="name">
+                </li>
+                <li>
+                  <input class="modal-calc__submit" type="submit" value="Отправить">
+                </li>
+              </ul>
+            </form>
+
+          </div>
+        </div>
+      </section>
     </main>
 
 
@@ -119,31 +246,10 @@
 
   <!-- Swiper.js -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script>
-    var swiper = new Swiper(".instruments__content", {
-      slidesPerView: 3,
-      spaceBetween: 10,
-      centeredSlides: true,
-      grabCursor: true,
-      keyboard: true,
-      fade: true,
-
-      pagination: { 
-        el: ".swiper-pagination", 
-        dynamicBullets: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-
-      breakpoints: {
-        0:{slidesPerView: 1,},
-        600:{slidesPerView: 2,},
-        1000:{slidesPerView: 3,},
-      },
-    });
-  </script>
+  <script src="/js/vanilla-tilt.min.js"></script>
+  <script src="/js/swiper.js"></script>
+  <script src="/js/VanillaTilt.js"></script>
+  <script src="/js/modal-window.js"></script>
 </body>
 
 
