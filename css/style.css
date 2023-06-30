@@ -90,7 +90,7 @@ nobr {
   color: #f2f2f2;
 }
 
-.list-content__item-price, .prices__title, .instruments__title, .about__title-description {
+.credits__title, .list-content__item-price, .prices__title, .instruments__title, .about__title-description {
   font-size: 64px;
   font-family: Helvetica;
   font-weight: 600;
@@ -115,7 +115,7 @@ nobr {
   text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.65);
 }
 
-.modal-rules li, .modal-rules__title, .modal-calc__label, .modal-calc__title, .list-content__item-description, .list-content__item-price, .prices__buttons-calc, .prices__buttons-rules, .prices__buttons-call, .prices__title, .card__title, .instruments__title, .about__text-description, .about__title-description, .about__text-main {
+.credits__title, .modal-rules li, .modal-rules__title, .modal-calc__label, .modal-calc__title, .list-content__item-description, .list-content__item-price, .prices__buttons-calc, .prices__buttons-rules, .prices__buttons-call, .prices__title, .card__title, .instruments__title, .about__text-description, .about__title-description, .about__text-main {
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.65);
 }
 
@@ -443,11 +443,12 @@ body {
   opacity: 0;
   transform: translateY(-10px);
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   padding-top: 5%;
   padding-bottom: 100px;
   left: 0;
   top: 0;
+  overflow: auto;
   width: 100%;
   height: 100%;
   -webkit-backdrop-filter: blur(15px);
@@ -585,11 +586,12 @@ body {
   opacity: 0;
   transform: translateY(-10px);
   position: fixed;
-  z-index: 1;
-  padding-top: 100px;
+  z-index: 10;
+  padding-top: 5%;
   margin: auto;
   left: 0;
   top: 0;
+  overflow: auto;
   width: 100%;
   height: 100%;
   -webkit-backdrop-filter: blur(15px);
@@ -808,5 +810,42 @@ body {
     font-size: 18px;
     width: 150px;
     height: 50px;
+  }
+}
+.credits {
+  position: relative;
+  background-image: url(/source/credits__bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  padding-bottom: 100px;
+}
+.credits__title {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.credits__content {
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.card__credits {
+  width: 360px;
+}
+.card__image-credits {
+  padding: 50px 0 25px;
+}
+.card__image-credits img {
+  border-radius: 30%;
+  width: 260px;
+}
+@media (max-width: 1000px) {
+  .credits__title {
+    font-size: 42px;
+  }
+}
+@media (max-width: 600px) {
+  .credits__title {
+    font-size: 32px;
   }
 }
