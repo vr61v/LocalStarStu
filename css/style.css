@@ -90,14 +90,14 @@ nobr {
   color: #f2f2f2;
 }
 
-.engeneers__title, .credits__title, .list-content__item-price, .prices__title, .instruments__title, .about__title-description {
+.contacts__title, .engeneers__title, .credits__title, .list-content__item-price, .prices__title, .instruments__title, .about__title-description {
   font-size: 64px;
   font-family: Helvetica;
   font-weight: 600;
   color: #f2f2f2;
 }
 
-.engeneers-list__item-text, .modal-rules li, .modal-rules__title, .modal-calc__submit, .modal-calc__label, .modal-calc__title, .list-content__item-description, .prices__buttons-calc, .prices__buttons-rules, .prices__buttons-call, .card__title, .about__text-description, .about__text-main {
+.contacts__list a, .engeneers-list__item-text, .modal-rules li, .modal-rules__title, .modal-calc__submit, .modal-calc__label, .modal-calc__title, .list-content__item-description, .prices__buttons-calc, .prices__buttons-rules, .prices__buttons-call, .card__title, .about__text-description, .about__text-main {
   font-size: 32px;
   font-family: Helvetica;
   font-weight: 500;
@@ -115,7 +115,7 @@ nobr {
   text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.65);
 }
 
-.engeneers-list__item-text, .engeneers__title, .credits__title, .modal-rules li, .modal-rules__title, .modal-calc__label, .modal-calc__title, .list-content__item-description, .list-content__item-price, .prices__buttons-calc, .prices__buttons-rules, .prices__buttons-call, .prices__title, .card__title, .instruments__title, .about__text-description, .about__title-description, .about__text-main {
+.contacts__list a, .contacts__title, .engeneers-list__item-text, .engeneers__title, .credits__title, .modal-rules li, .modal-rules__title, .modal-calc__label, .modal-calc__title, .list-content__item-description, .list-content__item-price, .prices__buttons-calc, .prices__buttons-rules, .prices__buttons-call, .prices__title, .card__title, .instruments__title, .about__text-description, .about__title-description, .about__text-main {
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.65);
 }
 
@@ -901,7 +901,7 @@ body {
   padding-top: 30px;
 }
 
-.vk::before, .tg::before, .gmail::before, .phone::before {
+.vk::before, .tg::before, .gmail::before, .phone::before, .address::before {
   content: "";
   width: 25px;
   height: 25px;
@@ -925,6 +925,10 @@ body {
 
 .phone::before {
   background-image: url("/source/phone.png");
+}
+
+.address::before {
+  background-image: url("/source/address.png");
 }
 
 @media (max-width: 1400px) {
@@ -977,5 +981,97 @@ body {
     align-items: center;
     flex-direction: column;
     text-align: center;
+  }
+}
+.contacts {
+  position: relative;
+  background-image: url(/source/contacts__bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  padding-bottom: 100px;
+}
+.contacts__title {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.contacts__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 30px 30px;
+}
+.contacts__list a {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-left: 10px;
+}
+.contacts__list-item-links {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+}
+
+.maps {
+  width: 560px;
+  height: 400px;
+}
+
+@media (max-width: 1000px) {
+  .contacts__list {
+    flex-direction: column-reverse;
+  }
+  .contacts__title {
+    font-size: 42px;
+    padding-bottom: 50px;
+  }
+  .contacts__list-item-links {
+    padding-left: 0px;
+  }
+}
+@media (max-width: 850px) {
+  .contacts__list a {
+    font-size: 24px;
+  }
+  .maps {
+    width: 400px;
+    height: 400px;
+  }
+}
+@media (max-width: 600px) {
+  .contacts__title {
+    font-size: 32px;
+  }
+  .contacts__list a {
+    font-size: 18px;
+  }
+  .maps {
+    width: 300px;
+    height: 400px;
+  }
+}
+.footer {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer img {
+  height: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (max-width: 850px) {
+  .footer {
+    height: 30px;
+  }
+  .footer img {
+    height: 20px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }

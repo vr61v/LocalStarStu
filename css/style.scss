@@ -873,8 +873,6 @@ body { font-family: Arial, Helvetica, sans-serif; }
     background: rgba($color: $GrayLight, $alpha: 0.1);
     backdrop-filter: blur(5px);
   }
-  &__item-img {
-  }
   &__item-img img{
     border-radius: 40px;
     max-width: 225px;
@@ -899,7 +897,7 @@ body { font-family: Arial, Helvetica, sans-serif; }
     padding-top: 30px;
   }
 }
-.vk::before, .tg::before, .gmail::before, .phone::before{
+.vk::before, .tg::before, .gmail::before, .phone::before, .address::before{
   content: '';
   width: 25px;
   height: 25px;
@@ -914,14 +912,15 @@ body { font-family: Arial, Helvetica, sans-serif; }
 }
 .tg::before {
   background-image: url('/source/tg.png');
-
 }
 .gmail::before {
   background-image: url('/source/gmail.png');
 }
 .phone::before{
   background-image: url('/source/phone.png');
-
+}
+.address::before{
+  background-image: url('/source/address.png');
 }
 
 @media (max-width: $breakpoint1400) {
@@ -993,5 +992,114 @@ body { font-family: Arial, Helvetica, sans-serif; }
       flex-direction: column;
       text-align: center;
     }
+  }
+}
+
+
+.contacts {
+  position: relative;
+  background-image: url(/source/contacts__bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  padding-bottom: 100px;
+  &__title {
+    @extend %font64px;
+    @extend %fontShadow;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 30px 30px;
+
+  }
+  &__list a{
+    @extend %font32px;
+    @extend %fontShadow;
+    display: flex;    
+    align-items: center;
+    padding-top: 40px;
+    padding-left: 10px;
+  }
+  &__list-item-links{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+  }
+}
+.maps{
+  width: 560px;
+  height: 400px;
+}
+@media (max-width: $breakpoint1400){
+  .engeneers {
+    &__title {
+      @extend %font64px;
+    }
+  }
+}
+@media (max-width: $breakpoint1000){
+  .contacts{
+    &__list{
+      flex-direction: column-reverse;
+    }
+    &__title {
+      font-size: 42px;
+      padding-bottom: 50px;
+    }
+    &__list-item-links{
+      padding-left: 0px;
+    }
+  }
+}
+@media (max-width: $breakpoint850){
+  .contacts{
+    &__list a{
+      font-size: 24px;
+    }
+  }
+  .maps{
+    width: 400px;
+    height: 400px;
+  }
+}
+@media (max-width: $breakpoint600){
+  .contacts{
+    &__title {
+      font-size: 32px;
+    }
+    &__list a{
+      font-size: 18px;
+    }
+  }
+  .maps{
+    width: 300px;
+    height: 400px;
+  }
+}
+
+
+
+.footer{
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer img{
+  height: 30px;
+  object-fit: cover;
+}
+@media (max-width: $breakpoint850){
+  .footer{
+    height: 30px;
+  }
+  .footer img{
+    height: 20px;
+    object-fit: cover;
   }
 }
