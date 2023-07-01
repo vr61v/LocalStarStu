@@ -827,7 +827,11 @@ body { font-family: Arial, Helvetica, sans-serif; }
   }
 }
 @media (max-width: $breakpoint850) {
-
+  .credits {
+    &__title {
+      padding-bottom: 50px;
+    }
+  }
 }
 @media (max-width: $breakpoint600) {
   .credits {
@@ -887,18 +891,37 @@ body { font-family: Arial, Helvetica, sans-serif; }
   &__item-links {
     display: flex;
     flex-direction: column;
-    padding-left: 10px;
   }
   &__item-links a{
+    display: flex;    
+    align-items: center;
     padding-left: 10px;
-    padding-top: 20px;
+    padding-top: 30px;
   }
 }
-.vk {
+.vk::before, .tg::before, .gmail::before, .phone::before{
+  content: '';
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-right: 10px;
 }
-.tg {
+
+.vk::before {
+  background-image: url('/source/vk.png');
 }
-.gmail {
+.tg::before {
+  background-image: url('/source/tg.png');
+
+}
+.gmail::before {
+  background-image: url('/source/gmail.png');
+}
+.phone::before{
+  background-image: url('/source/phone.png');
+
 }
 
 @media (max-width: $breakpoint1400) {
@@ -910,7 +933,9 @@ body { font-family: Arial, Helvetica, sans-serif; }
   .engeneers-list {
     &__item-img img{
       border-radius: 40px;
-      max-width: 150px;
+    }
+    &__item{
+      padding: 15px;
     }
     &__item-title {
       font-size: 24px;
@@ -928,7 +953,8 @@ body { font-family: Arial, Helvetica, sans-serif; }
   }
   .engeneers-list{
     &__item{
-      justify-content: center;}
+      justify-content: center;
+    }
     &__content {
       display: grid;
       gap: 10px;
@@ -937,12 +963,35 @@ body { font-family: Arial, Helvetica, sans-serif; }
   }
 }
 @media (max-width: $breakpoint850) {
-
+  .engeneers {
+    &__title {
+      padding-bottom: 50px;
+    }
+  }
+  .engeneers-list{
+    &__item {
+      padding: 20px 10px;
+    }
+  } 
 }
 @media (max-width: $breakpoint600) {
   .engeneers {
     &__title {
       font-size: 32px;
+    }
+  }
+  .engeneers-list{
+    &__item-title{
+      padding-top: 20px;
+      font-size: 24px;
+    }
+    &__item-links{
+      font-size: 18px;
+    }
+    &__item {
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
     }
   }
 }
