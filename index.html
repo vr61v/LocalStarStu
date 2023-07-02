@@ -203,27 +203,15 @@
                   <label class="modal-calc__label" for="songforkey">Песня под ключ</label>
                 </li>
               </ul>
-              <ul>
-                <li>
-                  <label class="modal-calc__label" for="surname" value="Итого">Итого:</label>
-                  <input class="modal-calc__name" type="number" disabled="true" id="result" name="result" value="0"></input>
-                </li>
-                <li>
-                  <label class="modal-calc__label" for="surname">Фамилия:</label>
-                  <input class="modal-calc__name" type="text" id="surname" name="surname">
-                </li>
-                <li>
-                  <label class="modal-calc__label" for="name">Имя:</label>
-                  <input class="modal-calc__name" type="text" id="name" name="name">
-                </li>
-                <li>
-                  <label class="modal-calc__label" for="mail">Почта:</label>
-                  <input class="modal-calc__name" type="email" id="mail" name="mail">
-                </li>
-                <li>
-                  <input class="modal-calc__submit" type="submit" value="Отправить">
-                </li>
-              </ul>
+
+              <div class="modal-calc__result">
+                <div class="modal-calc__result-content" id="result">
+
+                </div>
+
+                <div class="modal-calc__result-sum" id="sum">Итого: 0</div>
+              </div>
+
             </form>
 
           </div>

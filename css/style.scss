@@ -387,11 +387,13 @@ body { font-family: Arial, Helvetica, sans-serif; }
     transition: all 0.3s;
   }
   &__form{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-areas: "__ul __div";
+    ul{
+      grid-area: __ul;
+    }
   }
+
   &__content{
     margin: auto;
     padding: 100px;
@@ -431,43 +433,10 @@ body { font-family: Arial, Helvetica, sans-serif; }
     background-color: rgba($color: $White, $alpha: 1);
     color: $Black;
   }
-  &__name{
-    width: 100%;
-    height: 20px;
-    padding: 10px 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: rgba($color: $White, $alpha: 1);
-    color: $Black;
-  }
-  &__name:disabled{
-    color: $White;
-    background-color: rgba($color: $GrayDark, $alpha: 0.5);
-  }
   &__checkbox {
     position: absolute;
     z-index: -1;
     opacity: 0;
-  }
-  &__submit{
-    @extend %font32px;
-    font-size: 24px;
-    width: 200px;
-    height: 70px;
-    border: none;
-    margin-bottom: 40px;
-    border-radius: 30px;
-    background: rgba($color: $GrayDark, $alpha: 0.1);
-    backdrop-filter: blur(5px);
-    transition: all 0.3s;
-  }
-  &__submit:hover{
-    background: rgba($color: $Gray, $alpha: 0.1);
-    transition: all 0.3s;
-  }
-  &__submit:active{
-    background: rgba($color: $White, $alpha: 0.1);
-    transition: all 0.3s;
   }
   li{
     margin-bottom: 20px;
@@ -512,6 +481,35 @@ body { font-family: Arial, Helvetica, sans-serif; }
 
     transition: all 0.2s;
   }
+
+  &__result{
+    grid-area: __div;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 50px;
+    border-radius: 30px;
+    background-color: rgba($color: $White, $alpha: 0.9);
+    
+  }
+  &__result-item{    
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+
+    @extend %font32px;
+    color: $GrayDark;
+    font-size: 18px;
+  }
+  &__result-item:last-child{padding-bottom: 0;}
+  &__result-item-work{}
+  &__result-item-price{}
+  &__result-sum{
+    padding-top: 20px;
+    font-size: 24px;
+  }
+
+
 }
 
 .modal-rules {
@@ -600,11 +598,20 @@ body { font-family: Arial, Helvetica, sans-serif; }
       margin: auto 15px;
     }
     &__form {
-      display: flex;
-      flex-direction: column;
+      grid-template-areas: "__ul" "__div";
     }
     ul{
       padding-top: 50px;
+    }
+    &__result{
+      margin-top: 25px;
+    }
+    &__result-item{
+      font-size: 18px;
+    }
+    &__result-sum{
+      padding-top: 20px;
+      font-size: 24px;
     }
   }
   .modal-rules{
@@ -626,6 +633,12 @@ body { font-family: Arial, Helvetica, sans-serif; }
   .prices {
     &__title {
       font-size: 42px;
+    }
+  }
+
+  .modal-calc{
+    &__result-item-price{
+      width: 70px;
     }
   }
 
@@ -705,6 +718,17 @@ body { font-family: Arial, Helvetica, sans-serif; }
       width: 150px;
       height: 50px;
     }
+
+    &__result-item{
+      font-size: 16px;
+    }
+    &__result-item-price{
+      width: 70px;
+    }
+    &__result-sum{
+      padding-top: 20px;
+      font-size: 18px;
+    }
   }
   .modal-rules{
     &__title{
@@ -729,6 +753,12 @@ body { font-family: Arial, Helvetica, sans-serif; }
       height: 50px;
       border: none;
       border-radius: 20px;
+    }
+  }
+
+  .modal-calc{
+    &__result-item-price{
+      width: 50px;
     }
   }
 
@@ -774,6 +804,13 @@ body { font-family: Arial, Helvetica, sans-serif; }
       font-size: 18px;
       width: 150px;
       height: 50px;
+    }
+
+    &__result{
+      padding: 20px 15px;
+    }
+    &__result-item{
+      font-size: 12px;
     }
   }
 }
