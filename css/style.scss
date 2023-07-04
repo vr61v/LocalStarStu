@@ -490,6 +490,15 @@ body { font-family: Arial, Helvetica, sans-serif; }
     transition: all 0.2s;
   }
 
+  &__radio + label::before{
+    border-radius: 50%;
+  }
+  &__radio:checked+label::before {
+    background-image: url('/source/icon/ok-radio.png');
+
+    transition: all 0.2s;
+  }
+
   &__result{
     grid-area: __div;
     display: flex;

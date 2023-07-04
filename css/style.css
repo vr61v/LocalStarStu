@@ -558,6 +558,13 @@ body {
   background-color: rgba(38, 38, 38, 0.5);
   transition: all 0.2s;
 }
+.modal-calc__radio + label::before {
+  border-radius: 50%;
+}
+.modal-calc__radio:checked + label::before {
+  background-image: url("/source/icon/ok-radio.png");
+  transition: all 0.2s;
+}
 .modal-calc__result {
   grid-area: __div;
   display: flex;
