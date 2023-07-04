@@ -17,7 +17,7 @@ function calcFunc() {
   hours = Number(document.getElementById("hours").value)
   result = document.getElementById("result")
 
-  if(hours > 0){
+  if(hours > 0 && (checked("pro") || checked("no-pro"))){
     if(document.getElementById("result-item-hours")){
       document.getElementById("result-item-hours").remove()
     }
@@ -77,3 +77,13 @@ function calcFunc() {
 
 const element = document.querySelector('form.modal-calc__form > ul')
 element.addEventListener('click', calcFunc)
+
+
+
+
+var a,b;
+function foo(c) {
+  if (a != c) {b = 0;a = c}
+  b ^= 1
+  c.checked = b
+}
