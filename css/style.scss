@@ -361,6 +361,14 @@ body { font-family: Arial, Helvetica, sans-serif; }
     padding: 0 10%;
     font-size: 32px;
   }
+  &__item-sale{
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  &__item-description-sale{
+    font-size: 64px;
+  }
 }
 
 .modal-calc {
@@ -589,6 +597,9 @@ body { font-family: Arial, Helvetica, sans-serif; }
     &__item {
       height: 300px;
     }
+    &__item-description-sale{
+      font-size: 64px;
+    }
   }  
   .modal-calc{
     &__title{
@@ -650,6 +661,9 @@ body { font-family: Arial, Helvetica, sans-serif; }
     &__item-description {
       font-size: 32px;
     }
+    &__item-description-sale{
+      font-size: 64px;
+    }
   }  
 }
 @media (max-width: $breakpoint850) {
@@ -684,6 +698,9 @@ body { font-family: Arial, Helvetica, sans-serif; }
     }
     &__item-description {
       font-size: 24px;
+    }
+    &__item-description-sale{
+      font-size: 32px;
     }
   } 
 
@@ -774,6 +791,9 @@ body { font-family: Arial, Helvetica, sans-serif; }
     }
     &__item-description {
       font-size: 16px;
+    }
+    &__item-description-sale{
+      font-size: 32px;
     }
   } 
 

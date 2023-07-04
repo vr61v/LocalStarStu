@@ -440,6 +440,13 @@ body {
   padding: 0 10%;
   font-size: 32px;
 }
+.list-content__item-sale {
+  justify-content: center;
+  cursor: pointer;
+}
+.list-content__item-description-sale {
+  font-size: 64px;
+}
 
 .modal-calc {
   visibility: hidden;
@@ -645,6 +652,9 @@ body {
   .list-content__item {
     height: 300px;
   }
+  .list-content__item-description-sale {
+    font-size: 64px;
+  }
   .modal-calc__title {
     padding-bottom: 0px;
   }
@@ -696,6 +706,9 @@ body {
   .list-content__item-description {
     font-size: 32px;
   }
+  .list-content__item-description-sale {
+    font-size: 64px;
+  }
 }
 @media (max-width: 850px) {
   .prices {
@@ -729,6 +742,9 @@ body {
   }
   .list-content__item-description {
     font-size: 24px;
+  }
+  .list-content__item-description-sale {
+    font-size: 32px;
   }
   .modal-calc__title {
     font-size: 24px;
@@ -803,6 +819,9 @@ body {
   }
   .list-content__item-description {
     font-size: 16px;
+  }
+  .list-content__item-description-sale {
+    font-size: 32px;
   }
   .modal-calc__label {
     font-size: 16px;

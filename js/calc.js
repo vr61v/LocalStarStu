@@ -22,7 +22,7 @@ function calcFunc() {
       document.getElementById("result-item-hours").remove()
     }
     if(checked("pro")){
-      add(result, "Часы работы студии с Профи", `${hours} * 800`, "hours", hours * 800)
+      add(result, "Часы работы студии с Профи", `${hours} * 1000`, "hours", hours * 1000)
     }else{
       add(result, "Часы работы студии", `${hours} * 600`, "hours", hours * 600)
     }
@@ -38,7 +38,7 @@ function calcFunc() {
   }
 
   if(checked("design")){ 
-    add(result, "Графический дизайн", "2700", "design", 2700) 
+    add(result, "Графический дизайн", "от 2700", "design", 2700) 
   }
   else if(document.getElementById("result-item-design")){ 
     document.getElementById("result-item-design").remove() 
