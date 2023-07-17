@@ -122,6 +122,12 @@ nobr {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.body__modal-open {
+  overflow: hidden;
 }
 
 .__container {
@@ -131,6 +137,11 @@ body {
   box-sizing: content-box;
 }
 
+@media (max-width: 400px) {
+  .__container {
+    padding: 0 10px;
+  }
+}
 .header {
   position: absolute;
   width: 100%;
@@ -271,6 +282,17 @@ body {
     font-size: 16px;
   }
 }
+@media (max-width: 400px) {
+  .about__title-main {
+    font-size: 36px;
+  }
+  .about__title-description {
+    font-size: 24px;
+  }
+  .about__text-description {
+    font-size: 16px;
+  }
+}
 .instruments {
   position: relative;
   background-image: url(/source/background/instruments.jpg);
@@ -361,6 +383,15 @@ body {
 @media (max-width: 600px) {
   .instruments__title {
     font-size: 32px;
+  }
+}
+@media (max-width: 400px) {
+  .instruments__title {
+    font-size: 24px;
+    padding-top: 50px;
+  }
+  .instruments__content {
+    margin: 50px 5px 50px;
   }
 }
 .prices {
@@ -863,6 +894,12 @@ body {
     font-size: 12px;
   }
 }
+@media (max-width: 400px) {
+  .prices__title {
+    font-size: 24px;
+    padding-top: 50px;
+  }
+}
 .credits {
   position: relative;
   background-image: url(/source/background/credits.jpg);
@@ -903,6 +940,12 @@ body {
 @media (max-width: 600px) {
   .credits__title {
     font-size: 32px;
+  }
+}
+@media (max-width: 400px) {
+  .credits__title {
+    font-size: 24px;
+    padding-top: 50px;
   }
 }
 .engeneers {
@@ -1034,6 +1077,12 @@ body {
     text-align: center;
   }
 }
+@media (max-width: 400px) {
+  .engeneers__title {
+    font-size: 24px;
+    padding-top: 50px;
+  }
+}
 .contacts {
   position: relative;
   background-image: url(/source/background/contacts.jpg);
@@ -1102,6 +1151,19 @@ body {
   .maps {
     width: 300px;
     height: 400px;
+  }
+}
+@media (max-width: 400px) {
+  .contacts__title {
+    font-size: 24px;
+    padding-top: 50px;
+  }
+  .contacts__list a {
+    font-size: 16px;
+  }
+  .maps {
+    width: 250px;
+    height: 300px;
   }
 }
 .footer {

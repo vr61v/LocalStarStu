@@ -3,13 +3,26 @@ $breakpoint1400: 1400px;
 $breakpoint1000: 1000px;
 $breakpoint850: 850px;
 $breakpoint600: 600px;
-body { font-family: Arial, Helvetica, sans-serif; }
+$breakpoint400: 400px;
+body { 
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.body__modal-open{    
+  overflow: hidden;
+}
 
 .__container {
   max-width: 1200px;
   padding: 0 36px;
   margin: 0 auto;
   box-sizing: content-box;
+}
+@media (max-width: $breakpoint400) {
+  .__container{
+    padding: 0 10px;
+  }
 }
 
 .header {
@@ -151,7 +164,13 @@ body { font-family: Arial, Helvetica, sans-serif; }
     &__text-description { font-size: 16px; }
   }
 }
-
+@media (max-width: $breakpoint400) {
+  .about {
+    &__title-main { font-size: 36px; }
+    &__title-description { font-size: 24px; }
+    &__text-description { font-size: 16px; }
+  }
+}
 
 .instruments {
   position: relative;
@@ -264,7 +283,18 @@ body { font-family: Arial, Helvetica, sans-serif; }
     }
   }
 }
+@media (max-width: $breakpoint400) {
+  .instruments {
+    &__title {
+      font-size: 24px;
+      padding-top: 50px;
+    }
+    &__content {
+      margin: 50px 5px 50px;
+    }
+  }
 
+}
 
 .prices {  
   position: relative;
@@ -843,6 +873,14 @@ body { font-family: Arial, Helvetica, sans-serif; }
     }
   }
 }
+@media (max-width: $breakpoint400) {
+  .prices {
+    &__title {
+      font-size: 24px;
+      padding-top: 50px;
+    }
+  }
+}
 
 
 .credits {
@@ -907,7 +945,14 @@ body { font-family: Arial, Helvetica, sans-serif; }
     }
   }
 }
-
+@media (max-width: $breakpoint400) {
+  .credits {
+    &__title {
+      font-size: 24px;
+      padding-top: 50px;
+    }
+  }
+}
 
 .engeneers {
   position: relative;
@@ -1061,7 +1106,15 @@ body { font-family: Arial, Helvetica, sans-serif; }
     }
   }
 }
+@media (max-width: $breakpoint400) {
+  .engeneers {
+    &__title {
+      font-size: 24px;
+      padding-top: 50px;
+    }
+  }
 
+}
 
 .contacts {
   position: relative;
@@ -1149,7 +1202,22 @@ body { font-family: Arial, Helvetica, sans-serif; }
     height: 400px;
   }
 }
-
+@media (max-width: $breakpoint400){
+  .contacts{
+    &__title {
+      font-size: 24px;
+      padding-top: 50px;
+    }
+    &__list a{
+      font-size: 16px;
+    }
+  }
+  .maps{
+    width: 250px;
+    height: 300px;
+  }
+  
+}
 
 
 .footer{
